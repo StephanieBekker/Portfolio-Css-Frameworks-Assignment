@@ -9,42 +9,59 @@
   </head>
 
   <body class="d-flex flex-column">
-    <header class="navbar bg-white bg-opacity-50 px-4 position-relative z-3 small">
-      <span class="navbar-brand fs-6 fw-bold d-flex align-items-center gap-2">
-        <img
-          src="./assets/SB.svg"
-          alt=""
-          height="32"
-          class="d-inline-block align-text-top me-2"
-        />
+    <header
+      class="navbar bg-white bg-opacity-50 px-4 position-relative z-3 small py-0"
+    >
+      <span class="navbar-brand fw-bold d-flex align-items-center gap-2 py-0">
+        <span class="text-sb fst-italic fw-bold pe-1">SB</span>
         Stephanie Bekker
       </span>
     </header>
 
     <main class="container-fluid flex-grow-1 position-relative overflow-hidden">
       <div class="wall-shape" aria-hidden="true"></div>
-      <nav class="folders d-flex flex-wrap gap-3 position-relative z-1" aria-label="Mapper">
+      <div class="desktop-label position-absolute z-1 pe-none">
+        <p>MULTIMEDIEDESIGNER &amp; WEBUDVIKLER</p>
+        <h1>Velkommen<br />til mit<br /><em>skrivebord.</em></h1>
+        <small> Der er næsten styr på det.↖</small>
+      </div>
+      <aside class="desktop-note position-absolute d-none d-md-block">
+        Husk:<br />En anden vinkel kan også være en vej frem.
+      </aside>
+      <nav
+        class="folders d-flex flex-wrap gap-3 gap-md-4 p-3 p-md-4 position-relative z-1"
+        aria-label="Mapper"
+      >
         <button
           type="button"
-          class="btn folder d-flex flex-column align-items-center gap-2"
+          class="btn btn-sm folder d-flex flex-column align-items-center gap-2"
         >
-          <span class="folder-shape" aria-hidden="true"></span>
+          <span
+            class="folder-shape d-flex justify-content-center align-items-center fs-4"
+            aria-hidden="true"
+          >☆</span>
           Om mig
         </button>
 
         <button
           type="button"
-          class="btn folder d-flex flex-column align-items-center gap-2"
+          class="btn btn-sm folder d-flex flex-column align-items-center gap-2"
         >
-          <span class="folder-shape" aria-hidden="true"></span>
+          <span
+            class="folder-shape d-flex justify-content-center align-items-center fs-4"
+            aria-hidden="true"
+          >ⓘ</span>
           Læs mig
         </button>
 
         <button
           type="button"
-          class="btn folder d-flex flex-column align-items-center gap-2"
+          class="btn btn-sm folder d-flex flex-column align-items-center gap-2"
         >
-          <span class="folder-shape" aria-hidden="true"></span>
+          <span
+            class="folder-shape d-flex justify-content-center align-items-center fs-4"
+            aria-hidden="true"
+          >✎</span>
           Projekter
         </button>
       </nav>

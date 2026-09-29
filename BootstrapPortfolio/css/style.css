@@ -3873,11 +3873,11 @@ textarea.form-control-lg {
   --bs-navbar-hover-color: rgba(var(--bs-emphasis-color-rgb), 0.8);
   --bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);
   --bs-navbar-active-color: rgba(var(--bs-emphasis-color-rgb), 1);
-  --bs-navbar-brand-padding-y: 0.3125rem;
+  --bs-navbar-brand-padding-y: 0.65rem;
   --bs-navbar-brand-margin-end: 1rem;
-  --bs-navbar-brand-font-size: 1.25rem;
-  --bs-navbar-brand-color: rgba(var(--bs-emphasis-color-rgb), 1);
-  --bs-navbar-brand-hover-color: rgba(var(--bs-emphasis-color-rgb), 1);
+  --bs-navbar-brand-font-size: 0.8rem;
+  --bs-navbar-brand-color: #182a35;
+  --bs-navbar-brand-hover-color: #182a35;
   --bs-navbar-nav-link-padding-x: 0.5rem;
   --bs-navbar-toggler-padding-y: 0.25rem;
   --bs-navbar-toggler-padding-x: 0.75rem;
@@ -11879,6 +11879,15 @@ body {
 
 .navbar {
   backdrop-filter: blur(16px);
+  height: 46px;
+}
+
+.folder {
+  width: 100px;
+}
+
+.folders {
+  max-width: 280px;
 }
 
 .folder:focus-visible {
@@ -11893,6 +11902,7 @@ body {
   background: #fff3cf;
   border: 1px solid rgba(24, 42, 53, 0.2509803922);
   border-radius: 3px 7px 7px 7px;
+  box-shadow: 2px 5px 0 rgba(24, 42, 53, 0.0705882353);
 }
 .folder-shape::before {
   content: "";
@@ -11905,6 +11915,78 @@ body {
   border: 1px solid rgba(24, 42, 53, 0.2509803922);
   border-bottom: none;
   border-radius: 5px 7px 0px 0px;
+}
+
+.desktop-label {
+  left: 29%;
+  top: 30%;
+  transform: rotate(-4deg);
+}
+.desktop-label p {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+}
+.desktop-label h1, .desktop-label .h1 {
+  font-size: clamp(3rem, 7vw, 7rem);
+  letter-spacing: -0.07em;
+  line-height: 0.9;
+  font-weight: 800;
+}
+.desktop-label em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  color: #f9faf2;
+}
+.desktop-label small, .desktop-label .small {
+  display: block;
+  margin-top: 30px;
+  font: italic 20px Georgia;
+}
+@media (max-width: 767.98px) {
+  .desktop-label {
+    left: 20%;
+    top: 42%;
+  }
+  .desktop-label h1, .desktop-label .h1 {
+    font-size: 2.4rem;
+  }
+}
+@media (max-width: 767.98px) and (orientation: landscape) {
+  .desktop-label {
+    left: 56%;
+    top: 3rem;
+  }
+  .desktop-label h1, .desktop-label .h1 {
+    font-size: 2rem;
+  }
+}
+
+.desktop-note {
+  right: 6%;
+  bottom: 20%;
+  padding: 23px;
+  background: #fcf6c2;
+  max-width: 230px;
+  transform: rotate(7deg);
+  font: italic 19px Georgia;
+  box-shadow: 5px 7px 20px rgba(24, 42, 53, 0.0823529412);
+}
+
+.folder:nth-child(2) .folder-shape {
+  background: #b8eddb;
+}
+
+.folder:nth-child(3) .folder-shape {
+  background: #ffac83;
+}
+
+.navbar-brand {
+  letter-spacing: 0.03em;
+}
+
+.text-sb {
+  letter-spacing: -3px;
+  font-size: 22px;
 }
 
 /*# sourceMappingURL=style.css.map */
