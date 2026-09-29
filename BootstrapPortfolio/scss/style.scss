@@ -1,0 +1,29 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  min-height: 500vh;
+
+  background: linear-gradient(
+    to bottom,
+    #050816 0%,
+    #0b1026 10%,
+    #1a2340 20%,
+    #4a5572 28%,
+    #8d7890 34%, 
+    #c98f82 40%,
+    #f2c28f 44%,
+    #9acbea 52%,
+    #72b9e6 60%,
+    #8cc7e8 68%,
+    #f0b57b 76%,
+    #b86f72 84%,
+    #4b365f 90%,
+    #171a35 95%,
+    #050816 100%
+  );
+
+  background-repeat: no-repeat;
+}
