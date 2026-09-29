@@ -130,3 +130,19 @@ body {
   letter-spacing: -3px;
   font-size: 22px;
 }
+.desk-window {
+  top:4rem;
+  left: 1rem;
+  right: 1rem;
+  z-index: 10;
+
+  @include media-breakpoint-up(md) {
+    left: 10rem;
+    right: auto;
+    width: 36rem;
+  }
+}
+.card-body {
+  max-height: 60vh;
+  overflow-y: auto;
+}

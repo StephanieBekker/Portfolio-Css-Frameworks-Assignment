@@ -39,7 +39,8 @@
           <span
             class="folder-shape d-flex justify-content-center align-items-center fs-4"
             aria-hidden="true"
-          >☆</span>
+            >☆</span
+          >
           Om mig
         </button>
 
@@ -50,7 +51,8 @@
           <span
             class="folder-shape d-flex justify-content-center align-items-center fs-4"
             aria-hidden="true"
-          >ⓘ</span>
+            >ⓘ</span
+          >
           Læs mig
         </button>
 
@@ -61,12 +63,31 @@
           <span
             class="folder-shape d-flex justify-content-center align-items-center fs-4"
             aria-hidden="true"
-          >✎</span>
+            >✎</span
+          >
           Projekter
         </button>
       </nav>
+      <section
+        id="window"
+        hidden
+        class="desk-window card position-absolute shadow rounded-3"
+      >
+        <header
+          class="card-header d-flex justify-content-between align-items-center"
+        >
+          <h2 id="window-title" class="fs-6 mb-0">Featured</h2>
+          <button
+            type="button"
+            class="btn-close"
+            aria-label="Luk vindue"
+            id="window-close"
+          ></button>
+        </header>
+        <div id="window-content" class="card-body"></div>
+      </section>
     </main>
 
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>

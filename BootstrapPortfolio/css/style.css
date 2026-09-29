@@ -11989,4 +11989,23 @@ body {
   font-size: 22px;
 }
 
+.desk-window {
+  top: 4rem;
+  left: 1rem;
+  right: 1rem;
+  z-index: 10;
+}
+@media (min-width: 768px) {
+  .desk-window {
+    left: 10rem;
+    right: auto;
+    width: 36rem;
+  }
+}
+
+.card-body {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
 /*# sourceMappingURL=style.css.map */
