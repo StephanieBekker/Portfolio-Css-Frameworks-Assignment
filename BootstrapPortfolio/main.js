@@ -46,3 +46,13 @@ document.addEventListener("keydown", (e) => {
     }
 
 });
+
+const splash = document.getElementById("splash");
+
+function hideSplash() {
+    splash.remove();
+}
+
+setTimeout(hideSplash, 1400);
+document.getElementById("splash-skip").addEventListener("click", hideSplash
+);
