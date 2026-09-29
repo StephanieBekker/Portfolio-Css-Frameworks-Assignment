@@ -4,16 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="./assets/SB.svg" />
     <title>Bootstrap Portfolio.</title>
   </head>
 
-  <body>
-    <nav></nav>
+  <body class="d-flex flex-column">
+    <header class="navbar bg-white bg-opacity-50 px-4 position-relative z-3 small">
+      <span class="navbar-brand fs-6 fw-bold d-flex align-items-center gap-2">
+        <img
+          src="./assets/SB.svg"
+          alt=""
+          height="32"
+          class="d-inline-block align-text-top me-2"
+        />
+        Stephanie Bekker
+      </span>
+    </header>
 
-    <main class="container-fluid">
+    <main class="container-fluid flex-grow-1 position-relative overflow-hidden">
       <div class="wall-shape" aria-hidden="true"></div>
-      <div class="folders d-flex flex-wrap gap-3">
+      <nav class="folders d-flex flex-wrap gap-3 position-relative z-1" aria-label="Mapper">
         <button
           type="button"
           class="btn folder d-flex flex-column align-items-center gap-2"
@@ -37,7 +47,7 @@
           <span class="folder-shape" aria-hidden="true"></span>
           Projekter
         </button>
-      </div>
+      </nav>
     </main>
 
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
