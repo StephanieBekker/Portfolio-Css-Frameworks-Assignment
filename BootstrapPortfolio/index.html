@@ -34,7 +34,8 @@
       >
         <button
           type="button"
-          class="btn btn-sm folder d-flex flex-column align-items-center gap-2"
+          data-window="om-mig"
+          class="btn btn-sm folder d-flex flex-column align-items-center gap-2 pt-3"
         >
           <span
             class="folder-shape d-flex justify-content-center align-items-center fs-4"
@@ -46,7 +47,8 @@
 
         <button
           type="button"
-          class="btn btn-sm folder d-flex flex-column align-items-center gap-2"
+          data-window="laes-mig"
+          class="btn btn-sm folder d-flex flex-column align-items-center gap-2 pt-3"
         >
           <span
             class="folder-shape d-flex justify-content-center align-items-center fs-4"
@@ -58,7 +60,8 @@
 
         <button
           type="button"
-          class="btn btn-sm folder d-flex flex-column align-items-center gap-2"
+          data-window="projekter"
+          class="btn btn-sm folder d-flex flex-column align-items-center gap-2 pt-3"
         >
           <span
             class="folder-shape d-flex justify-content-center align-items-center fs-4"
@@ -86,6 +89,15 @@
         </header>
         <div id="window-content" class="card-body"></div>
       </section>
+      <template id="om-mig">
+        <p>Om mig kommer her.</p>
+      </template>
+      <template id="laes-mig">
+        <p>Læs mig kommer her.</p>
+      </template>
+      <template id="projekter">
+        <p>Projekter kommer her.</p>
+      </template>
     </main>
 
     <script src="./main.js"></script>
