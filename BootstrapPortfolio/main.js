@@ -2,52 +2,123 @@
 const win = document.getElementById("window");
 const title = document.getElementById("window-title");
 const content = document.getElementById("window-content");
+const closeButton = document.getElementById("window-close");
+
+const imagePreview = document.getElementById("image-preview");
+const previewImage = document.getElementById("image-preview-img");
+const previewTitle = document.getElementById("image-preview-title");
 
 // Husker hvilken mappe der er åbnede vinduet
 let lastFolder = null;
+let lastImageButton = null;
 
-
-// Et klik lytter på hele siden
+// Åbn mapper of skift mellem projekternes visninger.
 document.addEventListener("click", (e) => {
-    // Fandt klikket en knap med data-window? Ellers: stop
     const btn = e.target.closest("[data-window]");
     if (!btn) return;
 
-    // husk sidste folder, så vi kan fokusere på den igen når vinduet lukkes
+    const template = document.getElementById(btn.dataset.window);
+    if (!template) return;
+
+
     if (btn.classList.contains("folder")) lastFolder = btn;
 
-    // Læg en kopi af templatens med samme navn som kanppens data-window
-    const template = document.getElementById(btn.dataset.window);
 
-    // Læg en kopi af templatens indhold ind i vinduet
     content.replaceChildren(template.content.cloneNode(true));
     win.dataset.content = btn.dataset.window;
-
-    // Titel = knappens tekst, og vis vinduet
-    title.textContent = btn.textContent.trim();
+    title.textContent = btn.dataset.title || btn.textContent.trim();
     win.hidden = false;
-    document.getElementById("window-close").focus();
+    content.scrollTop = 0;
 
-
+    // Flyt fokus til den nye visning.
+    if (btn.dataset.window === "lakal") {
+        content.querySelector(".project-title").focus();
+    } else if (btn.classList.contains("project-back")) {
+        content.querySelector(".project-open").focus();
+    } else {
+        closeButton.focus();
+    }
 });
-// Luk vinduet
+
 function closeWindow() {
     win.hidden = true;
-    if (lastFolder) lastFolder.focus();
+    lastFolder?.focus();
 }
 
+closeButton.addEventListener("click", closeWindow);
 
-// klik på krydset
-document.getElementById("window-close").addEventListener("click", closeWindow);
-
-// Tryk på ESC når vinduet er åbent
+// Escape lukker billedet først. Ellers lukker vinduet
 document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !win.hidden) {
-        closeWindow();
-    }
-
+    if (e.key !== "Escape" || imagePreview.open) return;
+    if (!win.hidden) closeWindow();
 });
 
+// Billedeknapperne kommer fra templaten, så vi lytter på siden.
+document.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-image]");
+    if (!btn) return;
+
+    const img = btn.querySelector("img");
+    previewImage.src = img.src;
+    previewImage.alt = img.alt;
+    previewTitle.textContent = btn.dataset.image;
+    lastImageButton = btn;
+
+    imagePreview.showModal();
+});
+
+document.getElementById("image-preview-close").addEventListener("click", () => {
+    imagePreview.close();
+});
+
+imagePreview.addEventListener("click", (e) => {
+    if (e.target === imagePreview) imagePreview.close();
+});
+
+imagePreview.addEventListener("close", () => {
+    lastImageButton?.focus();
+});
+
+const zoomIn = document.getElementById("image-zoom-in");
+const zoomOut = document.getElementById("image-zoom-out");
+const zoomLevel = document.getElementById("image-zoom-level");
+
+let zoomPrecent = 100;
+let imageWidth = 0;
+
+function changeImageZoom(change) {
+    if (zoomPrecent === 100) {
+        imageWidth = previewImage.clientWidth;
+    }
+
+    zoomPrecent = Math.min(600, Math.max(100, zoomPrecent + change));
+
+    imagePreview.classList.toggle("is-zoomed", zoomPrecent !== 100);
+
+    previewImage.style.width = zoomPrecent === 100
+        ? ""
+        : `${imageWidth * zoomPrecent / 100}px`;
+
+    zoomLevel.textContent = `${zoomPrecent}%`;
+    zoomOut.disabled = zoomPrecent === 100;
+    zoomIn.disabled = zoomPrecent === 600;
+}
+
+zoomIn.addEventListener("click", () => changeImageZoom(50));
+zoomOut.addEventListener("click", () => changeImageZoom(-50));
+
+// Hvert nyt billede starter i den tilpassede visning.
+imagePreview.addEventListener("close", () => {
+    zoomPrecent = 100;
+    previewImage.style.width = "";
+    imagePreview.classList.remove("is-zoomed");
+    zoomLevel.textContent = "100%";
+    zoomIn.disabled = false;
+    zoomOut.disabled = true;
+});
+
+
+// Startskærm.
 const splash = document.getElementById("splash");
 
 function hideSplash() {
@@ -55,5 +126,4 @@ function hideSplash() {
 }
 
 setTimeout(hideSplash, 1400);
-document.getElementById("splash-skip").addEventListener("click", hideSplash
-);
+document.getElementById("splash-skip").addEventListener("click", hideSplash);

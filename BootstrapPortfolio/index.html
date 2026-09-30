@@ -188,25 +188,489 @@
       </template>
       <template id="readme">
         <article class="readme p-2">
-          <h3 class="fs-5 mb-3">Sådan bruger du skrivebordet</h3>
+          <h3 class="readme-note d-inline-block px-3 py-3 mb-4">
+            Sådan bruger du skrivebordet
+          </h3>
           <p>
             Gå på opdagelse i mapperne for at læse om mig og se mine projekter.
           </p>
-          <ul class="mb-0">
-            <li class="mb-2">Klik på en mappe for at åbne indholdet.</li>
-            <li class="mb-2">
-              Luk vinduet ved at klikke på krydset eller <kbd>Escape</kbd>
+          <ul class="list-unstyled mb-0">
+            <li class="d-flex gap-3 p-3 rounded-3 mb-2">
+              <span
+                class="readme-icon d-inline-flex align-items-center justify-content-center flex-shrink-0 rounded-circle"
+                aria-hidden="true"
+                >↖</span
+              >
+              <p class="mb-0">
+                <strong class="d-block">Åbn en mappe</strong>
+                Klik på en mappe for at åbne indholdet.
+              </p>
             </li>
-            <li>
-              Brug <kbd>Tab</kbd> til at navigere mellem knapperne og
-              <kbd>Enter</kbd> til at åbne en mappe.
+            <li class="d-flex gap-3 p-3 rounded-3 mb-2">
+              <span
+                class="readme-icon d-inline-flex align-items-center justify-content-center flex-shrink-0 rounded-circle"
+                aria-hidden="true"
+                >×</span
+              >
+              <p class="mb-0">
+                <strong class="d-block">Luk vinduet</strong>
+                Klik på krydset eller tryk på <kbd>Escape</kbd>.
+              </p>
+            </li>
+            <li class="d-flex gap-3 p-3 rounded-3">
+              <span
+                class="readme-icon d-inline-flex align-items-center justify-content-center flex-shrink-0 rounded-circle"
+                aria-hidden="true"
+                >⌨</span
+              >
+              <p class="mb-0">
+                <strong class="d-block">Brug tastaturet</strong>
+                Brug <kbd>Tab</kbd> til at navigere mellem knapperne og
+                <kbd>Enter</kbd> til at åbne en mappe.
+              </p>
             </li>
           </ul>
         </article>
       </template>
       <template id="projects">
-        <p>Projekter kommer her.</p>
+        <article class="projects-overview p-2">
+          <header class="projects-intro mb-4">
+            <h3 class="readme-note d-inline-block px-3 py-3 mb-0">
+              Mine projekter
+            </h3>
+            <svg
+              class="projects-intro-line"
+              viewBox="0 0 235 10"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M3 5 C55 1 125 9 232 4" />
+            </svg>
+          </header>
+          <article class="project-card card rounded-3 p-4">
+            <div class="row g-4 align-items-center">
+              <div class="col-12 col-md-4">
+                <div class="project-art position-relative" aria-hidden="true">
+                  <span class="project-orbit position-absolute"></span>
+                  <img
+                    src="./assets/lakal/item.png"
+                    alt=""
+                    class="img-fluid d-block"
+                  />
+                  <span class="project-art-note position-absolute px-3 py-2">
+                    Lån tæt på
+                  </span>
+                </div>
+              </div>
+              <div class="project-card-text col-12 col-md-8">
+                <p class="project-eyebrow mb-2">
+                  EKSAMENSPROJEKT · 1. SEMESTER
+                </p>
+                <h4 class="mb-2">LÅKAL</h4>
+                <p class="small mb-3">Webudvikling · Gruppeprojekt</p>
+                <p class="project-description">
+                  En låneapp for naboer i samme boligfællesskab. Del de ting, I
+                  allerede har, frem for at købe nyt.
+                </p>
+                <ul
+                  class="project-tags list-unstyled d-flex flex-wrap gap-2 mb-4"
+                  aria-label="Fagområder i projektet"
+                >
+                  <li
+                    class="badge rounded-pill text-dark border fw-normal px-3 py-2"
+                  >
+                    Frontend
+                  </li>
+                  <li
+                    class="badge rounded-pill text-dark border fw-normal px-3 py-2"
+                  >
+                    Backend
+                  </li>
+                  <li
+                    class="badge rounded-pill text-dark border fw-normal px-3 py-2"
+                  >
+                    Databaser
+                  </li>
+                  <li
+                    class="badge rounded-pill text-dark border fw-normal px-3 py-2"
+                  >
+                    UX
+                  </li>
+                </ul>
+                <button
+                  type="button"
+                  data-window="lakal"
+                  data-title="LÅKAL"
+                  class="project-open btn btn-dark rounded-pill stretched-link px-3 py-2"
+                >
+                  Læs om LÅKAL
+                  <span aria-hidden="true">↗</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </article>
       </template>
+      <template id="lakal">
+        <article class="project-details p-2">
+          <nav
+            class="d-flex justify-content-between align-items-center gap-3 mb-4"
+            aria-label="projektnavigation"
+          >
+            <button
+              type="button"
+              data-window="projects"
+              data-title="✎ Projekter"
+              class="project-back btn btn-link text-dark p-0 small"
+            >
+              <span aria-hidden="true">↩</span> Tilbage til projekter
+            </button>
+            <span class="badge rounded-pill text-dark border fw-normal"
+              >Gruppeprojekt
+            </span>
+          </nav>
+          <header class="row g-4 align-items-center mb-4">
+            <div class="col-12 col-md-8">
+              <p class="project-eyebrow mb-2">1. SEMESTER · WEBUDVIKLING</p>
+              <h3 class="project-title" tabindex="-1">LÅKAL</h3>
+              <p class="project-summary">
+                Lån og del i<br /><em>dit boligfællesskab.</em>
+              </p>
+              <ul
+                class="project-tags list-unstyled d-flex flex-wrap gap-2 mb-0"
+                aria-label="Fagområder i projektet"
+              >
+                <li
+                  class="badge rounded-pill text-dark border fw-normal px-3 py-2"
+                >
+                  Frontend
+                </li>
+                <li
+                  class="badge rounded-pill text-dark border fw-normal px-3 py-2"
+                >
+                  Backend
+                </li>
+                <li
+                  class="badge rounded-pill text-dark border fw-normal px-3 py-2"
+                >
+                  Databaser
+                </li>
+                <li
+                  class="badge rounded-pill text-dark border fw-normal px-3 py-2"
+                >
+                  UX
+                </li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-4 d-none d-md-block">
+              <div class="project-art position-relative" aria-hidden="true">
+                <span class="project-orbit position-absolute"></span>
+                <img
+                  src="./assets/lakal/item.png"
+                  alt=""
+                  class="img-fluid d-block"
+                />
+                <span class="project-art-note position-absolute px-3 py-2">
+                  Lån tæt på
+                </span>
+              </div>
+            </div>
+          </header>
+          <div class="row g-4 border-top border-bottom py-4">
+            <section
+              class="col-12 col-md-5"
+              aria-labelledby="lakal-about-title"
+            >
+              <h4 id="lakal-about-title" class="fs-6 fw-bold mb-2">
+                Om projektet
+              </h4>
+              <p class="small mb-0">
+                LÅKAL er et gruppeprojekt udviklet som eksamensprojekt på første
+                semester af webudvikling.
+              </p>
+            </section>
+            <section class="col-12 col-md-7" aria-labelledby="lakal-task-title">
+              <div class="project-task rounded-3 p-3 h-100">
+                <h4 id="lakal-task-title" class="fs-6 fw-bold mb-2">Opgaven</h4>
+                <p class="small mb-0">
+                  Undersøg og find et udækket behov med fokus på bæredygtighed.
+                  Udvikl en løsning som en Single Page Application (SPA) i Vue
+                  3.
+                </p>
+              </div>
+            </section>
+          </div>
+          <div class="row g-3 my-3">
+            <div class="col-12 col-md-6">
+              <section
+                class="project-answer border rounded-3 p-3 h-100"
+                aria-labelledby="lakal-problem-title"
+              >
+                <p class="project-eyebrow mb-2">01 / PROBLEMET</p>
+                <h4 id="lakal-problem-title">Lån frem for at købe</h4>
+                <p class="small mb-0">
+                  Hvordan gør vi det enkelt og trygt for naboer at låne
+                  genstande af hinanden frem for at købe nyt?
+                </p>
+              </section>
+            </div>
+            <div class="col-12 col-md-6">
+              <section
+                class="project-answer project-solution border rounded-3 p-3 h-100"
+                aria-labelledby="lakal-solution-title"
+              >
+                <p class="project-eyebrow mb-2">02 / VORES LØSNING</p>
+                <h4 id="lakal-solution-title">Et fælles sted at dele</h4>
+                <p class="small mb-0">
+                  En app for naboer i samme boligfællesskab, fx et kollegium
+                  eller en boligblok. Her kan man oprette ting til udlån og
+                  anmode om at låne andres.
+                </p>
+              </section>
+            </div>
+          </div>
+          <section
+            class="project-process mt-4"
+            aria-labelledby="lakal-process-title"
+          >
+            <h4
+              id="lakal-process-title"
+              class="readme-note d-inline-block px-3 py-3 mb-4"
+            >
+              Fra idé til løsning
+            </h4>
+            <div class="row g-4">
+              <!--- Personaen Mathilde -->
+              <div class="col-12 col-md-4">
+                <figure class="row g-3 g-md-0 mb-0">
+                  <div class="col-4 col-md-12">
+                    <button
+                      type="button"
+                      class="process-image-button w-100 border rounded-3 p-3"
+                      data-image="Persona Mathilde"
+                      aria-label="Vis personaen"
+                    >
+                      <img
+                        src="./assets/lakal/persona.png"
+                        alt="Personaen Mathilde med mål, behov og frustrationer"
+                      />
+                    </button>
+                  </div>
+                  <figcaption class="col-8 col-md-12 pt-md-3">
+                    <p class="project-eyebrow mb-2">01 / BRUGEROPLEVELSE</p>
+                    <h5>Forstå behovet</h5>
+                    <p class="small mb-0">
+                      Research og personaer satte retningen for en enkel og
+                      lokal låneoplevelse.
+                    </p>
+                  </figcaption>
+                </figure>
+              </div>
+              <!-- Databasens ER-diagram -->
+              <div class="col-12 col-md-4">
+                <figure class="row g-3 g-md-0 mb-0">
+                  <div class="col-4 col-md-12">
+                    <button
+                      type="button"
+                      class="process-image-button process-database w-100 border rounded-3 p-3"
+                      data-image="Databasens ER-diagram"
+                      aria-label="Vis ER-diagrammet større"
+                    >
+                      <img
+                        src="./assets/lakal/database.png"
+                        alt="ER-diagrammet over relationer mellem bruger,genstande og lån"
+                      />
+                    </button>
+                  </div>
+                  <figcaption class="col-8 col-md-12 pt-md-3">
+                    <p class="project-eyebrow mb-2">02 / DATABASE</p>
+                    <h5>Skab sammenhæng</h5>
+                    <p class="small mb-0">
+                      En relationel MySQL-database binder brugere, genstande og
+                      lån sammen.
+                    </p>
+                  </figcaption>
+                </figure>
+              </div>
+              <!-- De to trin i Opret genstand-->
+              <div class="col-12 col-md-4">
+                <figure class="row g-3 g-md-0 mb-0">
+                  <div class="col-4 col-md-12">
+                    <div
+                      class="process-screen-pair d-flex gap-2 border rounded-3 p-3"
+                    >
+                      <button
+                        type="button"
+                        class="process-step border-0 p-0"
+                        data-image="Opret genstand: trin 1"
+                        aria-label="Vis første trin større"
+                      >
+                        <img
+                          src="./assets/lakal/create-step-1.png"
+                          alt="Første trin: billede, kategori og navn på genstanden"
+                        />
+                      </button>
+                      <button
+                        type="button"
+                        class="process-step border-0 p-0"
+                        data-image="Opret genstand: trin 2"
+                        aria-label="Vis andet trin større"
+                      >
+                        <img
+                          src="./assets/lakal/create-step-2.png"
+                          alt="Andet trin: tilbehør, stand og låneperiode"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                  <figcaption class="col-8 col-md-12 pt-md-3">
+                    <p class="project-eyebrow mb-2">03 / DEN UDVIKLEDE APP</p>
+                    <h5>Gør det brugbart</h5>
+                    <p class="small mb-0">
+                      Frontend og backend understøtter oprettelse af genstande
+                      og låneanmodninger.
+                    </p>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+            <p class="small mt-3 mb-0">
+              Klik på billederne for at se dem større.
+            </p>
+          </section>
+          <section
+            class="project-learning p-4 my-4"
+            aria-labelledby="lakal-learning-title"
+          >
+            <h4 id="lakal-learning-title">Det tager jeg med</h4>
+            <p class="small">
+              Vi havde større ambitioner end tiden tillod. Derfor prioriterede
+              vi kernefunktionerne.
+            </p>
+            <ul class="row g-3 list-unstyled mb-0">
+              <li class="col-12 col-md-4">
+                <strong class="d-block">Prioritering</strong>
+                Funktionalitet før visuel finpudsning.
+              </li>
+              <li class="col-12 col-md-4">
+                <strong class="d-block">Struktur</strong>
+                Overblik over opgaver og fælles kode
+              </li>
+              <li class="col-12 col-md-4">
+                <strong class="d-block">Afgrænsning</strong>
+                Tilpasse ambitionerne til tiden.
+              </li>
+            </ul>
+          </section>
+          <footer class="project-footer border-top pt-3 mt-4">
+            <p class="small fw-semibold mb-2">Teknologier og metoder</p>
+            <ul
+              class="project-tags list-unstyled d-flex flex-wrap gap-2 mb-3"
+              aria-label="Teknologier og metoder"
+            >
+              <li
+                class="badge rounded-pill text-dark border fw-normal px-3 py-2"
+              >
+                Vue 3
+              </li>
+              <li
+                class="badge rounded-pill text-dark border fw-normal px-3 py-2"
+              >
+                Node.js
+              </li>
+              <li
+                class="badge rounded-pill text-dark border fw-normal px-3 py-2"
+              >
+                Express
+              </li>
+              <li
+                class="badge rounded-pill text-dark border fw-normal px-3 py-2"
+              >
+                MySQL
+              </li>
+              <li
+                class="badge rounded-pill text-dark border fw-normal px-3 py-2"
+              >
+                REST API
+              </li>
+              <li
+                class="badge rounded-pill text-dark border fw-normal px-3 py-2"
+              >
+                CRUD
+              </li>
+            </ul>
+            <a
+              href="https://github.com/StephanieBekker/semester-project-naborrow"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-open btn btn-dark rounded-pill px-3 py-2"
+            >
+              Se koden på GitHub
+              <span class="visually-hidden">(åbner i en ny fane)</span>
+            </a>
+          </footer>
+        </article>
+      </template>
+      <dialog
+        id="image-preview"
+        class="image-preview"
+        aria-labelledby="image-preview-title"
+      >
+        <header
+          class="image-preview-header d-flex flex-wrap align-items-center gap-3 p-3"
+        >
+          <h3 id="image-preview-title" class="fs-6 mb-0"></h3>
+          <div class="d-flex align-items-center gap-3 ms-auto">
+            <div
+              class="d-flex align-items-center gap-2"
+              role="group"
+              aria-label="Billedzoom"
+            >
+              <button
+                type="button"
+                id="image-zoom-out"
+                class="btn zoom-button rounded-circle"
+                aria-label="Zoom ud"
+                disabled
+              >
+                −
+              </button>
+
+              <output
+                id="image-zoom-level"
+                class="small text-center"
+                aria-live="polite"
+              >
+                100%
+              </output>
+
+              <button
+                type="button"
+                id="image-zoom-in"
+                class="btn zoom-button rounded-circle"
+                aria-label="Zoom ind"
+              >
+                +
+              </button>
+            </div>
+
+            <button
+              type="button"
+              id="image-preview-close"
+              class="btn-close"
+              aria-label="Luk billede"
+              autofocus
+            ></button>
+          </div>
+        </header>
+        <div
+          class="image-preview-body p-3"
+          tabindex="0"
+          aria-label="Billedområde"
+        >
+          <img id="image-preview-img" alt="" />
+        </div>
+      </dialog>
     </main>
 
     <script src="./main.js"></script>
