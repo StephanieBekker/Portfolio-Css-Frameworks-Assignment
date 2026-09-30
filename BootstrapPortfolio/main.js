@@ -21,6 +21,7 @@ document.addEventListener("click", (e) => {
 
     // Læg en kopi af templatens indhold ind i vinduet
     content.replaceChildren(template.content.cloneNode(true));
+    win.dataset.content = btn.dataset.window;
 
     // Titel = knappens tekst, og vis vinduet
     title.textContent = btn.textContent.trim();

@@ -49,7 +49,7 @@
       >
         <button
           type="button"
-          data-window="om-mig"
+          data-window="about"
           class="btn btn-sm folder d-flex flex-column align-items-center gap-2 pt-3"
         >
           <span
@@ -62,7 +62,7 @@
 
         <button
           type="button"
-          data-window="laes-mig"
+          data-window="readme"
           class="btn btn-sm folder d-flex flex-column align-items-center gap-2 pt-3"
         >
           <span
@@ -75,7 +75,7 @@
 
         <button
           type="button"
-          data-window="projekter"
+          data-window="projects"
           class="btn btn-sm folder d-flex flex-column align-items-center gap-2 pt-3"
         >
           <span
@@ -88,6 +88,8 @@
       </nav>
       <section
         id="window"
+        role="dialog"
+        aria-labelledby="window-title"
         hidden
         class="desk-window card position-absolute shadow rounded-3"
       >
@@ -104,13 +106,105 @@
         </header>
         <div id="window-content" class="card-body"></div>
       </section>
-      <template id="om-mig">
-        <p>Om mig kommer her.</p>
+      <template id="about">
+        <article class="about-me p-2">
+          <div class="row g-4 align-items-center">
+            <div class="col-12 col-md-4">
+              <div class="about-photo position-relative">
+                <span
+                  class="about-orbit position-absolute"
+                  aria-hidden="true"
+                ></span>
+                <img
+                  src="./assets/stephanie-portrait.png"
+                  alt="Stephanie Bekker portræt"
+                  class="img-fluid d-block"
+                />
+                <span class="about-photo-label position-absolute px-3 py-2">
+                  Hej, jeg er Stephanie
+                </span>
+              </div>
+            </div>
+            <div class="col-12 col-md-8">
+              <p class="small">
+                Multimediedesigner &amp; webudviklingsstuderende
+              </p>
+              <h3 class="fw-bold mb-0">Jeg har ikke<br /><em>én stil.</em></h3>
+            </div>
+          </div>
+          <div class="about-text mt-4">
+            <p>
+              Jeg går meget op i webtilgængelighed. Alle skal have mulighed for
+              at bruge digitale løsninger på lige fod. Jeg har set sider, hvor
+              designet eller funktionerne gør det unødigt besværligt. Det vil
+              jeg gerne være med til at ændre.
+            </p>
+            <p>
+              Jeg kan lide at udfordre den oplagte løsning. Når noget virker
+              kompliceret, bliver jeg nysgerrig på, om der findes en enklere vej
+              til det samme resultat. Jeg ser efter mønstre og sammenhænge, der
+              kan gøre digitale løsninger mere intuitive.
+            </p>
+          </div>
+          <div class="about-interests mt-4">
+            <p class="small fw-semibold mb-2">Det interesserer mig</p>
+            <ul
+              class="list-unstyled d-flex flex-wrap gap-2 mb-4"
+              aria-label="Faglige interesser"
+            >
+              <li
+                class="badge rounded-pill text-dark border fw-normal px-3 py-2"
+              >
+                Frontend
+              </li>
+              <li
+                class="badge rounded-pill text-dark border fw-normal px-3 py-2"
+              >
+                Backend
+              </li>
+              <li
+                class="badge rounded-pill text-dark border fw-normal px-3 py-2"
+              >
+                Databaser
+              </li>
+              <li
+                class="badge rounded-pill text-dark border fw-normal px-3 py-2"
+              >
+                UX &amp; design
+              </li>
+            </ul>
+          </div>
+          <footer
+            class="about-contact d-flex flex-wrap align-items-center justify-content-between gap-3 border-top pt-3 mt-4"
+          >
+            <span class="small">Vil du vide mere?</span>
+            <a
+              href="mailto:stephanieduvaldbekker@gmail.com"
+              class="btn btn-dark rounded-pill px-3 py-2"
+              >Skriv til mig<span aria-hidden="true"></span
+            ></a>
+          </footer>
+        </article>
       </template>
-      <template id="laes-mig">
-        <p>Læs mig kommer her.</p>
+      <template id="readme">
+        <article class="readme p-2">
+          <h3 class="fs-5 mb-3">Sådan bruger du skrivebordet</h3>
+          <p>
+            Gå på opdagelse i mapperne for at læse om mig og se mine projekter.
+          </p>
+          <ul class="mb-0">
+            <li class="mb-2">Klik på en mappe for at åbne indholdet.</li>
+            <li class="mb-2">
+              Luk vinduet ved at klikke på krydset eller <kbd>Escape</kbd>
+            </li>
+            <li>
+              Brug <kbd>Tab</kbd> til at navigere mellem knapperne og
+              <kbd>Enter</kbd> til at åbne en mappe.
+            </li>
+          </ul>
+        </article>
       </template>
-      <template id="projekter">
+      <template id="projects">
         <p>Projekter kommer her.</p>
       </template>
     </main>

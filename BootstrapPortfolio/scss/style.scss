@@ -48,7 +48,7 @@ body {
   position: relative;
   width: 65px;
   height: 47px;
-  background: #fff3cf;
+  background: #fff0bc;
   border: 1px solid #182a3540;
   border-radius: 3px 7px 7px 7px;
   box-shadow: 2px 5px 0 #182a3512;
@@ -141,11 +141,12 @@ body {
     right: auto;
     width: 36rem;
   }
+  .card-body {
+    max-height: 60vh;
+    overflow-y: auto;
+  }
 }
-.card-body {
-  max-height: 60vh;
-  overflow-y: auto;
-}
+
 #splash {
   z-index: 1050;
   background: inherit;
@@ -187,4 +188,90 @@ $glassblur: 12px;
     border-color: rgba(225, 225, 225, 0.4);
     transform: translateY(-2px);
   }
+}
+.desk-window[data-content="about"] {
+  background: #fffdf7;
+
+  .card-header {
+    background: #fff0bc;
+  }
+
+  @include media-breakpoint-up(md) {
+    width: min(740px, calc(100vw - 11rem));
+  }
+}
+
+.about-photo {
+  width: 180px;
+  max-width: 100%;
+  isolation: isolate;
+
+  img {
+    width: 100%;
+    aspect-ratio: 180/195;
+    object-fit: cover;
+    border-radius: 90px 90px 24px 24px;
+    background: #b8eddb;
+  }
+  @include media-breakpoint-down(md) {
+    width: 145px;
+    margin-inline: auto;
+  }
+}
+
+.about-orbit {
+  inset: 15px -8px -6px;
+  border: 2px solid #d7aa51;
+  border-radius: 50%;
+  transform: rotate(-17deg);
+  z-index: -1;
+}
+
+.about-photo-label {
+  bottom: -9px;
+  left: -8px;
+  white-space: nowrap;
+  background: #fff0bc;
+  font: italic 1rem Georgia;
+  transform: rotate(-4deg);
+  box-shadow: 2px 3px 0 #182a3512;
+}
+.about-me {
+  h3 {
+    font-size: clamp(25px, 3vw, 34px);
+    line-height: 1.13;
+    letter-spacing: -0.045em;
+  }
+
+  h3 em {
+    font-family: Georgia, serif;
+    font-weight: 400;
+    color: #27655e;
+  }
+}
+.about-text p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+.about-interests {
+  .badge {
+    background: #fff0bc;
+    font-size: 0.8125rem;
+  }
+
+  li:nth-child(2) {
+    background: #b8eddb;
+  }
+  li:nth-child(3) {
+    background: #ffcfb9;
+  }
+  li:nth-child(4) {
+    background: #c7e7ee;
+  }
+}
+.about-contact .btn {
+  --bs-btn-bg: #182a35;
+  --bs-btn-border-color: #182a35;
+  --bs-btn-hover-bg: #27655e;
+  --bs-btn-hover-border-color: #27655e;
 }
