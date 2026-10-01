@@ -12033,15 +12033,16 @@ body {
   }
 }
 .glass {
-  background: rgba(225, 225, 225, 0.15);
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(225, 225, 225, 0.2);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 .glass:hover {
-  background: rgba(225, 225, 225, 0.25);
-  border-color: rgba(225, 225, 225, 0.4);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
   transform: translateY(-2px);
 }
 

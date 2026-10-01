@@ -172,20 +172,21 @@ body {
     animation: none;
   }
 }
-$glassbg: rgba(225, 225, 225, 0.15);
-$gassborder: rgba(225, 225, 225, 0.2);
+$glassbg: rgba(255, 255, 255, 0.15);
+$glass-border: rgba(255, 255, 255, 0.2);
 $glassblur: 12px;
 
 .glass {
   background: $glassbg;
   backdrop-filter: blur($glassblur);
-  border: 1px solid $gassborder;
+  -webkit-backdrop-filter: blur($glassblur);
+  border: 1px solid $glass-border;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 
   &:hover {
-    background: rgba(225, 225, 225, 0.25);
-    border-color: rgba(225, 225, 225, 0.4);
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
     transform: translateY(-2px);
   }
 }
