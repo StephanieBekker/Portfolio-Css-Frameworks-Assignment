@@ -1,59 +1,63 @@
 <!doctype html>
-<html lang="da">
+<html lang="da" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="icon" type="image/svg+xml" href="./assets/SB.svg" />
-    <title>Bootstrap Portfolio.</title>
+    <title>Bulma Portfolio.</title>
   </head>
 
-  <body class="d-flex flex-column">
+  <body class="is-flex is-flex-direction-column">
     <div
       id="splash"
-      class="position-fixed top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center"
+      class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
     >
       <img src="./assets/SB.svg" alt="" height="96" />
-      <p class="fs-4 mt-3">Starter en ny tanke...</p>
-      <div class="boot-line mt-3 mb-4" aria-hidden="true"></div>
+      <p class="is-size-4 mt-4">Starter en ny tanke...</p>
+      <div class="boot-line mt-4 mb-5" aria-hidden="true"></div>
       <button
         type="button"
         id="splash-skip"
-        class="btn btn-sm glass rounded-pill px-4 text-body"
+        class="button is-small glass is-rounded px-5"
       >
         Gå direkte til skrivebordet
       </button>
     </div>
-    <header
-      class="navbar bg-white bg-opacity-50 px-4 position-relative z-3 small py-0"
-    >
-      <span class="navbar-brand fw-bold d-flex align-items-center gap-2 py-0">
-        <span class="text-sb fst-italic fw-bold pe-1">SB</span>
-        Stephanie Bekker
-      </span>
+    <header class="navbar px-3">
+      <div class="navbar-brand">
+        <span class="navbar-item is-gap-1">
+          <span class="text-sb is-italic has-text-weight-bold pr-1">SB</span>
+          Stephanie Bekker
+        </span>
+      </div>
     </header>
 
-    <main class="container-fluid flex-grow-1 position-relative overflow-hidden">
+    <main class="px-3 is-relative is-flex-grow-1 is-clipped">
       <div class="wall-shape" aria-hidden="true"></div>
-      <div class="desktop-label position-absolute z-1 pe-none">
+      <div class="desktop-label">
         <p>MULTIMEDIEDESIGNER &amp; WEBUDVIKLER</p>
         <h1>Velkommen<br />til mit<br /><em>skrivebord.</em></h1>
         <small> Der er næsten styr på det.↖</small>
       </div>
-      <aside class="desktop-note position-absolute d-none d-md-block">
+      <aside class="desktop-note is-hidden-mobile">
         Husk:<br />En anden vinkel kan også være en vej frem.
       </aside>
       <nav
-        class="folders d-flex flex-wrap gap-3 gap-md-4 p-3 p-md-4 position-relative z-1"
+        class="folders is-relative is-flex is-flex-wrap-wrap p-4"
         aria-label="Mapper"
       >
         <button
           type="button"
           data-window="about"
-          class="btn btn-sm folder d-flex flex-column align-items-center gap-2 pt-3"
+          class="folder small is-flex is-flex-direction-column is-align-items-center is-gap-1 pt-4 px-2 pb-1"
         >
           <span
-            class="folder-shape d-flex justify-content-center align-items-center fs-4"
+            class="folder-shape is-flex is-justify-content-center is-align-items-center is-size-4"
             aria-hidden="true"
             >☆</span
           >
@@ -63,10 +67,10 @@
         <button
           type="button"
           data-window="readme"
-          class="btn btn-sm folder d-flex flex-column align-items-center gap-2 pt-3"
+          class="folder small is-flex is-flex-direction-column is-align-items-center is-gap-1 pt-4 px-2 pb-1"
         >
           <span
-            class="folder-shape d-flex justify-content-center align-items-center fs-4"
+            class="folder-shape is-flex is-justify-content-center is-align-items-center is-size-4"
             aria-hidden="true"
             >ⓘ</span
           >
@@ -76,10 +80,10 @@
         <button
           type="button"
           data-window="projects"
-          class="btn btn-sm folder d-flex flex-column align-items-center gap-2 pt-3"
+          class="folder small is-flex is-flex-direction-column is-align-items-center is-gap-1 pt-4 px-2 pb-1"
         >
           <span
-            class="folder-shape d-flex justify-content-center align-items-center fs-4"
+            class="folder-shape is-flex is-justify-content-center is-align-items-center is-size-4"
             aria-hidden="true"
             >✎</span
           >
@@ -91,48 +95,45 @@
         role="dialog"
         aria-labelledby="window-title"
         hidden
-        class="desk-window card position-absolute shadow rounded-3"
+        class="desk-window card"
       >
-        <header
-          class="card-header d-flex justify-content-between align-items-center"
-        >
-          <h2 id="window-title" class="fs-6 mb-0">Featured</h2>
+        <header class="card-header">
+          <h2 id="window-title" class="is-size-6 mb-0">Featured</h2>
           <button
             type="button"
-            class="btn-close"
+            class="delete"
             aria-label="Luk vindue"
             id="window-close"
           ></button>
         </header>
-        <div id="window-content" class="card-body"></div>
+        <div id="window-content" class="card-content"></div>
       </section>
       <template id="about">
         <article class="about-me p-2">
-          <div class="row g-4 align-items-center">
-            <div class="col-12 col-md-4">
-              <div class="about-photo position-relative">
-                <span
-                  class="about-orbit position-absolute"
-                  aria-hidden="true"
-                ></span>
+          <div class="columns is-multiline is-vcentered">
+            <div class="column is-4-tablet">
+              <div class="about-photo is-relative">
+                <span class="about-orbit" aria-hidden="true"></span>
                 <img
                   src="./assets/stephanie-portrait.png"
                   alt="Stephanie Bekker portræt"
-                  class="img-fluid d-block"
+                  class="is-block"
                 />
-                <span class="about-photo-label position-absolute px-3 py-2">
+                <span class="about-photo-label px-4 py-2">
                   Hej, jeg er Stephanie
                 </span>
               </div>
             </div>
-            <div class="col-12 col-md-8">
+            <div class="column is-8-tablet">
               <p class="small">
                 Multimediedesigner &amp; webudviklingsstuderende
               </p>
-              <h3 class="fw-bold mb-0">Jeg har ikke<br /><em>én stil.</em></h3>
+              <h3 class="has-text-weight-bold mb-0">
+                Jeg har ikke<br /><em>én stil.</em>
+              </h3>
             </div>
           </div>
-          <div class="about-text mt-4">
+          <div class="about-text mt-5">
             <p>
               Jeg går meget op i webtilgængelighed. Alle skal have mulighed for
               at bruge digitale løsninger på lige fod. Jeg har set sider, hvor
@@ -146,41 +147,24 @@
               kan gøre digitale løsninger mere intuitive.
             </p>
           </div>
-          <div class="about-interests mt-4">
-            <p class="small fw-semibold mb-2">Det interesserer mig</p>
-            <ul
-              class="list-unstyled d-flex flex-wrap gap-2 mb-4"
-              aria-label="Faglige interesser"
-            >
-              <li
-                class="badge rounded-pill text-dark border fw-normal px-3 py-2"
-              >
-                Frontend
-              </li>
-              <li
-                class="badge rounded-pill text-dark border fw-normal px-3 py-2"
-              >
-                Backend
-              </li>
-              <li
-                class="badge rounded-pill text-dark border fw-normal px-3 py-2"
-              >
-                Databaser
-              </li>
-              <li
-                class="badge rounded-pill text-dark border fw-normal px-3 py-2"
-              >
-                UX &amp; design
-              </li>
+          <div class="about-interests mt-5">
+            <p class="small has-text-weight-semibold mb-2">
+              Det interesserer mig
+            </p>
+            <ul class="tags mb-5" aria-label="Faglige interesser">
+              <li class="tag is-rounded has-border px-4">Frontend</li>
+              <li class="tag is-rounded has-border px-4">Backend</li>
+              <li class="tag is-rounded has-border px-4">Databaser</li>
+              <li class="tag is-rounded has-border px-4">UX &amp; design</li>
             </ul>
           </div>
           <footer
-            class="about-contact d-flex flex-wrap align-items-center justify-content-between gap-3 border-top pt-3 mt-4"
+            class="about-contact is-flex is-flex-wrap-wrap is-align-items-center is-justify-content-space-between is-gap-2 has-border-top pt-4 mt-5"
           >
             <span class="small">Vil du vide mere?</span>
             <a
               href="mailto:stephanieduvaldbekker@gmail.com"
-              class="btn btn-dark rounded-pill px-3 py-2"
+              class="button is-rounded has-text-weight-normal px-4 py-2"
             >
               Skriv til mig
             </a>
@@ -189,43 +173,43 @@
       </template>
       <template id="readme">
         <article class="readme p-2">
-          <h3 class="readme-note d-inline-block px-3 py-3 mb-4">
+          <h3 class="readme-note is-inline-block px-4 py-4 mb-5">
             Sådan bruger du skrivebordet
           </h3>
           <p>
             Gå på opdagelse i mapperne for at læse om mig og se mine projekter.
           </p>
-          <ul class="list-unstyled mb-0">
-            <li class="d-flex gap-3 p-3 rounded-3 mb-2">
+          <ul class="mb-0">
+            <li class="is-flex is-gap-2 p-4 is-rounded-3 mb-2">
               <span
-                class="readme-icon d-inline-flex align-items-center justify-content-center flex-shrink-0 rounded-circle"
+                class="readme-icon is-inline-flex is-align-items-center is-justify-content-center is-flex-shrink-0 is-rounded-circle"
                 aria-hidden="true"
                 >↖</span
               >
               <p class="mb-0">
-                <strong class="d-block">Åbn en mappe</strong>
+                <strong class="is-block">Åbn en mappe</strong>
                 Klik på en mappe for at åbne indholdet.
               </p>
             </li>
-            <li class="d-flex gap-3 p-3 rounded-3 mb-2">
+            <li class="is-flex is-gap-2 p-4 is-rounded-3 mb-2">
               <span
-                class="readme-icon d-inline-flex align-items-center justify-content-center flex-shrink-0 rounded-circle"
+                class="readme-icon is-inline-flex is-align-items-center is-justify-content-center is-flex-shrink-0 is-rounded-circle"
                 aria-hidden="true"
                 >×</span
               >
               <p class="mb-0">
-                <strong class="d-block">Luk vinduet</strong>
+                <strong class="is-block">Luk vinduet</strong>
                 Klik på krydset eller tryk på <kbd>Escape</kbd>.
               </p>
             </li>
-            <li class="d-flex gap-3 p-3 rounded-3">
+            <li class="is-flex is-gap-2 p-4 is-rounded-3">
               <span
-                class="readme-icon d-inline-flex align-items-center justify-content-center flex-shrink-0 rounded-circle"
+                class="readme-icon is-inline-flex is-align-items-center is-justify-content-center is-flex-shrink-0 is-rounded-circle"
                 aria-hidden="true"
                 >⌨</span
               >
               <p class="mb-0">
-                <strong class="d-block">Brug tastaturet</strong>
+                <strong class="is-block">Brug tastaturet</strong>
                 Brug <kbd>Tab</kbd> til at navigere mellem knapperne og
                 <kbd>Enter</kbd> til at åbne en mappe.
               </p>
@@ -235,8 +219,8 @@
       </template>
       <template id="projects">
         <article class="projects-overview p-2">
-          <header class="projects-intro mb-4">
-            <h3 class="readme-note d-inline-block px-3 py-3 mb-0">
+          <header class="projects-intro mb-5">
+            <h3 class="readme-note is-inline-block px-4 py-4 mb-0">
               Mine projekter
             </h3>
             <svg
@@ -248,61 +232,39 @@
               <path d="M3 5 C55 1 125 9 232 4" />
             </svg>
           </header>
-          <article class="project-card card rounded-3 p-4">
-            <div class="row g-4 align-items-center">
-              <div class="col-12 col-md-4">
-                <div class="project-art position-relative" aria-hidden="true">
-                  <span class="project-orbit position-absolute"></span>
-                  <img
-                    src="./assets/lakal/item.png"
-                    alt=""
-                    class="img-fluid d-block"
-                  />
-                  <span class="project-art-note position-absolute px-3 py-2">
-                    Lån tæt på
-                  </span>
+          <article class="project-card card is-rounded-3 p-5">
+            <div class="columns is-multiline is-vcentered">
+              <div class="column is-4-tablet">
+                <div class="project-art is-relative" aria-hidden="true">
+                  <span class="project-orbit"></span>
+                  <img src="./assets/lakal/item.png" alt="" class="is-block" />
+                  <span class="project-art-note px-4 py-2"> Lån tæt på </span>
                 </div>
               </div>
-              <div class="project-card-text col-12 col-md-8">
+              <div class="project-card-text column is-8-tablet">
                 <p class="project-eyebrow mb-2">
                   EKSAMENSPROJEKT · 1. SEMESTER
                 </p>
                 <h4 class="mb-2">LÅKAL</h4>
-                <p class="small mb-3">Webudvikling · Gruppeprojekt</p>
+                <p class="small mb-4">Webudvikling · Gruppeprojekt</p>
                 <p class="project-description">
                   En låneapp for naboer i samme boligfællesskab. Del de ting, I
                   allerede har, frem for at købe nyt.
                 </p>
                 <ul
-                  class="project-tags list-unstyled d-flex flex-wrap gap-2 mb-4"
+                  class="project-tags tags mb-5"
                   aria-label="Fagområder i projektet"
                 >
-                  <li
-                    class="badge rounded-pill text-dark border fw-normal px-3 py-2"
-                  >
-                    Frontend
-                  </li>
-                  <li
-                    class="badge rounded-pill text-dark border fw-normal px-3 py-2"
-                  >
-                    Backend
-                  </li>
-                  <li
-                    class="badge rounded-pill text-dark border fw-normal px-3 py-2"
-                  >
-                    Databaser
-                  </li>
-                  <li
-                    class="badge rounded-pill text-dark border fw-normal px-3 py-2"
-                  >
-                    UX
-                  </li>
+                  <li class="tag is-rounded has-border px-4">Frontend</li>
+                  <li class="tag is-rounded has-border px-4">Backend</li>
+                  <li class="tag is-rounded has-border px-4">Databaser</li>
+                  <li class="tag is-rounded has-border px-4">UX</li>
                 </ul>
                 <button
                   type="button"
                   data-window="lakal"
                   data-title="LÅKAL"
-                  class="project-open btn btn-dark rounded-pill stretched-link px-3 py-2"
+                  class="project-open button is-rounded has-text-weight-normal px-4 py-2"
                 >
                   Læs om LÅKAL
                   <span aria-hidden="true">↗</span>
@@ -315,74 +277,55 @@
       <template id="lakal">
         <article class="project-details p-2">
           <nav
-            class="d-flex justify-content-between align-items-center gap-3 mb-4"
+            class="is-flex is-justify-content-space-between is-align-items-center is-gap-2 mb-5"
             aria-label="projektnavigation"
           >
             <button
               type="button"
               data-window="projects"
               data-title="✎ Projekter"
-              class="project-back btn btn-link text-dark p-0 small"
+              class="project-back button is-text has-text-weight-normal p-0 small"
             >
               <span aria-hidden="true">↩</span> Tilbage til projekter
             </button>
-            <span class="badge rounded-pill text-dark border fw-normal"
+            <span class="tag is-rounded has-border has-background-white"
               >Gruppeprojekt
             </span>
           </nav>
-          <header class="row g-4 align-items-center mb-4">
-            <div class="col-12 col-md-8">
+          <header class="columns is-multiline is-vcentered mb-5">
+            <div class="column is-8-tablet">
               <p class="project-eyebrow mb-2">1. SEMESTER · WEBUDVIKLING</p>
               <h3 class="project-title" tabindex="-1">LÅKAL</h3>
               <p class="project-summary">
                 Lån og del i<br /><em>dit boligfællesskab.</em>
               </p>
               <ul
-                class="project-tags list-unstyled d-flex flex-wrap gap-2 mb-0"
+                class="project-tags tags mb-0"
                 aria-label="Fagområder i projektet"
               >
-                <li
-                  class="badge rounded-pill text-dark border fw-normal px-3 py-2"
-                >
-                  Frontend
-                </li>
-                <li
-                  class="badge rounded-pill text-dark border fw-normal px-3 py-2"
-                >
-                  Backend
-                </li>
-                <li
-                  class="badge rounded-pill text-dark border fw-normal px-3 py-2"
-                >
-                  Databaser
-                </li>
-                <li
-                  class="badge rounded-pill text-dark border fw-normal px-3 py-2"
-                >
-                  UX
-                </li>
+                <li class="tag is-rounded has-border px-4">Frontend</li>
+                <li class="tag is-rounded has-border px-4">Backend</li>
+                <li class="tag is-rounded has-border px-4">Databaser</li>
+                <li class="tag is-rounded has-border px-4">UX</li>
               </ul>
             </div>
-            <div class="col-12 col-md-4 d-none d-md-block">
-              <div class="project-art position-relative" aria-hidden="true">
-                <span class="project-orbit position-absolute"></span>
-                <img
-                  src="./assets/lakal/item.png"
-                  alt=""
-                  class="img-fluid d-block"
-                />
-                <span class="project-art-note position-absolute px-3 py-2">
-                  Lån tæt på
-                </span>
+            <div class="column is-4-tablet is-hidden-mobile">
+              <div class="project-art is-relative" aria-hidden="true">
+                <span class="project-orbit"></span>
+                <img src="./assets/lakal/item.png" alt="" class="is-block" />
+                <span class="project-art-note px-4 py-2"> Lån tæt på </span>
               </div>
             </div>
           </header>
-          <div class="row g-4 border-top border-bottom py-4">
+          <div class="columns is-multiline has-border-y py-5">
             <section
-              class="col-12 col-md-5"
+              class="column is-5-tablet"
               aria-labelledby="lakal-about-title"
             >
-              <h4 id="lakal-about-title" class="fs-6 fw-bold mb-2">
+              <h4
+                id="lakal-about-title"
+                class="is-size-6 has-text-weight-bold mb-2"
+              >
                 Om projektet
               </h4>
               <p class="small mb-0">
@@ -390,9 +333,17 @@
                 semester af webudvikling.
               </p>
             </section>
-            <section class="col-12 col-md-7" aria-labelledby="lakal-task-title">
-              <div class="project-task rounded-3 p-3 h-100">
-                <h4 id="lakal-task-title" class="fs-6 fw-bold mb-2">Opgaven</h4>
+            <section
+              class="column is-7-tablet"
+              aria-labelledby="lakal-task-title"
+            >
+              <div class="project-task is-rounded-3 p-4 is-full-height">
+                <h4
+                  id="lakal-task-title"
+                  class="is-size-6 has-text-weight-bold mb-2"
+                >
+                  Opgaven
+                </h4>
                 <p class="small mb-0">
                   Undersøg og find et udækket behov med fokus på bæredygtighed.
                   Udvikl en løsning som en Single Page Application (SPA) i Vue
@@ -401,10 +352,10 @@
               </div>
             </section>
           </div>
-          <div class="row g-3 my-3">
-            <div class="col-12 col-md-6">
+          <div class="columns is-multiline my-4">
+            <div class="column is-6-tablet">
               <section
-                class="project-answer border rounded-3 p-3 h-100"
+                class="project-answer has-border is-rounded-3 p-4 is-full-height"
                 aria-labelledby="lakal-problem-title"
               >
                 <p class="project-eyebrow mb-2">01 / PROBLEMET</p>
@@ -415,9 +366,9 @@
                 </p>
               </section>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="column is-6-tablet">
               <section
-                class="project-answer project-solution border rounded-3 p-3 h-100"
+                class="project-answer project-solution has-border is-rounded-3 p-4 is-full-height"
                 aria-labelledby="lakal-solution-title"
               >
                 <p class="project-eyebrow mb-2">02 / VORES LØSNING</p>
@@ -431,23 +382,23 @@
             </div>
           </div>
           <section
-            class="project-process mt-4"
+            class="project-process mt-5"
             aria-labelledby="lakal-process-title"
           >
             <h4
               id="lakal-process-title"
-              class="readme-note d-inline-block px-3 py-3 mb-4"
+              class="readme-note is-inline-block px-4 py-4 mb-5"
             >
               Fra idé til løsning
             </h4>
-            <div class="row g-4">
+            <div class="columns is-multiline">
               <!--- Personaen Mathilde -->
-              <div class="col-12 col-md-4">
-                <figure class="row g-3 g-md-0 mb-0">
-                  <div class="col-4 col-md-12">
+              <div class="column is-4-tablet">
+                <figure class="columns is-mobile is-multiline mb-0">
+                  <div class="column is-4-mobile is-12-tablet">
                     <button
                       type="button"
-                      class="process-image-button w-100 border rounded-3 p-3"
+                      class="process-image-button is-full-width has-border is-rounded-3 p-4"
                       data-image="Persona Mathilde"
                       aria-label="Vis personaen"
                     >
@@ -457,7 +408,7 @@
                       />
                     </button>
                   </div>
-                  <figcaption class="col-8 col-md-12 pt-md-3">
+                  <figcaption class="column is-8-mobile is-12-tablet">
                     <p class="project-eyebrow mb-2">01 / BRUGEROPLEVELSE</p>
                     <h5>Forstå behovet</h5>
                     <p class="small mb-0">
@@ -468,12 +419,12 @@
                 </figure>
               </div>
               <!-- Databasens ER-diagram -->
-              <div class="col-12 col-md-4">
-                <figure class="row g-3 g-md-0 mb-0">
-                  <div class="col-4 col-md-12">
+              <div class="column is-4-tablet">
+                <figure class="columns is-mobile is-multiline mb-0">
+                  <div class="column is-4-mobile is-12-tablet">
                     <button
                       type="button"
-                      class="process-image-button process-database w-100 border rounded-3 p-3"
+                      class="process-image-button process-database is-full-width has-border is-rounded-3 p-4"
                       data-image="Databasens ER-diagram"
                       aria-label="Vis ER-diagrammet større"
                     >
@@ -483,7 +434,7 @@
                       />
                     </button>
                   </div>
-                  <figcaption class="col-8 col-md-12 pt-md-3">
+                  <figcaption class="column is-8-mobile is-12-tablet">
                     <p class="project-eyebrow mb-2">02 / DATABASE</p>
                     <h5>Skab sammenhæng</h5>
                     <p class="small mb-0">
@@ -494,15 +445,15 @@
                 </figure>
               </div>
               <!-- De to trin i Opret genstand-->
-              <div class="col-12 col-md-4">
-                <figure class="row g-3 g-md-0 mb-0">
-                  <div class="col-4 col-md-12">
+              <div class="column is-4-tablet">
+                <figure class="columns is-mobile is-multiline mb-0">
+                  <div class="column is-4-mobile is-12-tablet">
                     <div
-                      class="process-screen-pair d-flex gap-2 border rounded-3 p-3"
+                      class="process-screen-pair is-flex is-gap-1 has-border is-rounded-3 p-4"
                     >
                       <button
                         type="button"
-                        class="process-step border-0 p-0"
+                        class="process-step p-0"
                         data-image="Opret genstand: trin 1"
                         aria-label="Vis første trin større"
                       >
@@ -513,7 +464,7 @@
                       </button>
                       <button
                         type="button"
-                        class="process-step border-0 p-0"
+                        class="process-step p-0"
                         data-image="Opret genstand: trin 2"
                         aria-label="Vis andet trin større"
                       >
@@ -524,7 +475,7 @@
                       </button>
                     </div>
                   </div>
-                  <figcaption class="col-8 col-md-12 pt-md-3">
+                  <figcaption class="column is-8-mobile is-12-tablet">
                     <p class="project-eyebrow mb-2">03 / DEN UDVIKLEDE APP</p>
                     <h5>Gør det brugbart</h5>
                     <p class="small mb-0">
@@ -535,12 +486,12 @@
                 </figure>
               </div>
             </div>
-            <p class="small mt-3 mb-0">
+            <p class="small mt-4 mb-0">
               Klik på billederne for at se dem større.
             </p>
           </section>
           <section
-            class="project-learning p-4 my-4"
+            class="project-learning p-5 my-5"
             aria-labelledby="lakal-learning-title"
           >
             <h4 id="lakal-learning-title">Det tager jeg med</h4>
@@ -548,66 +499,44 @@
               Vi havde større ambitioner end tiden tillod. Derfor prioriterede
               vi kernefunktionerne.
             </p>
-            <ul class="row g-3 list-unstyled mb-0">
-              <li class="col-12 col-md-4">
-                <strong class="d-block">Prioritering</strong>
+            <ul class="columns is-multiline mb-0">
+              <li class="column is-4-tablet">
+                <strong class="is-block">Prioritering</strong>
                 Funktionalitet før visuel finpudsning.
               </li>
-              <li class="col-12 col-md-4">
-                <strong class="d-block">Struktur</strong>
+              <li class="column is-4-tablet">
+                <strong class="is-block">Struktur</strong>
                 Overblik over opgaver og fælles kode
               </li>
-              <li class="col-12 col-md-4">
-                <strong class="d-block">Afgrænsning</strong>
+              <li class="column is-4-tablet">
+                <strong class="is-block">Afgrænsning</strong>
                 Tilpasse ambitionerne til tiden.
               </li>
             </ul>
           </section>
-          <footer class="project-footer border-top pt-3 mt-4">
-            <p class="small fw-semibold mb-2">Teknologier og metoder</p>
+          <footer class="project-footer has-border-top pt-4 mt-5">
+            <p class="small has-text-weight-semibold mb-2">
+              Teknologier og metoder
+            </p>
             <ul
-              class="project-tags list-unstyled d-flex flex-wrap gap-2 mb-3"
+              class="project-tags tags mb-4"
               aria-label="Teknologier og metoder"
             >
-              <li
-                class="badge rounded-pill text-dark border fw-normal px-3 py-2"
-              >
-                Vue 3
-              </li>
-              <li
-                class="badge rounded-pill text-dark border fw-normal px-3 py-2"
-              >
-                Node.js
-              </li>
-              <li
-                class="badge rounded-pill text-dark border fw-normal px-3 py-2"
-              >
-                Express
-              </li>
-              <li
-                class="badge rounded-pill text-dark border fw-normal px-3 py-2"
-              >
-                MySQL
-              </li>
-              <li
-                class="badge rounded-pill text-dark border fw-normal px-3 py-2"
-              >
-                REST API
-              </li>
-              <li
-                class="badge rounded-pill text-dark border fw-normal px-3 py-2"
-              >
-                CRUD
-              </li>
+              <li class="tag is-rounded has-border px-4">Vue 3</li>
+              <li class="tag is-rounded has-border px-4">Node.js</li>
+              <li class="tag is-rounded has-border px-4">Express</li>
+              <li class="tag is-rounded has-border px-4">MySQL</li>
+              <li class="tag is-rounded has-border px-4">REST API</li>
+              <li class="tag is-rounded has-border px-4">CRUD</li>
             </ul>
             <a
               href="https://github.com/StephanieBekker/semester-project-naborrow"
               target="_blank"
               rel="noopener noreferrer"
-              class="project-open btn btn-dark rounded-pill px-3 py-2"
+              class="project-open button is-rounded has-text-weight-normal px-4 py-2"
             >
               Se koden på GitHub
-              <span class="visually-hidden">(åbner i en ny fane)</span>
+              <span class="is-sr-only">(åbner i en ny fane)</span>
             </a>
           </footer>
         </article>
@@ -618,19 +547,19 @@
         aria-labelledby="image-preview-title"
       >
         <header
-          class="image-preview-header d-flex flex-wrap align-items-center gap-3 p-3"
+          class="image-preview-header is-flex is-flex-wrap-wrap is-align-items-center is-gap-2 p-4"
         >
-          <h3 id="image-preview-title" class="fs-6 mb-0"></h3>
-          <div class="d-flex align-items-center gap-3 ms-auto">
+          <h3 id="image-preview-title" class="is-size-6 mb-0"></h3>
+          <div class="is-flex is-align-items-center is-gap-2 ml-auto">
             <div
-              class="d-flex align-items-center gap-2"
+              class="is-flex is-align-items-center is-gap-1"
               role="group"
               aria-label="Billedzoom"
             >
               <button
                 type="button"
                 id="image-zoom-out"
-                class="btn zoom-button rounded-circle"
+                class="button zoom-button is-rounded-circle"
                 aria-label="Zoom ud"
                 disabled
               >
@@ -639,7 +568,7 @@
 
               <output
                 id="image-zoom-level"
-                class="small text-center"
+                class="small has-text-centered"
                 aria-live="polite"
               >
                 100%
@@ -648,7 +577,7 @@
               <button
                 type="button"
                 id="image-zoom-in"
-                class="btn zoom-button rounded-circle"
+                class="button zoom-button is-rounded-circle"
                 aria-label="Zoom ind"
               >
                 +
@@ -658,14 +587,14 @@
             <button
               type="button"
               id="image-preview-close"
-              class="btn-close"
+              class="delete"
               aria-label="Luk billede"
               autofocus
             ></button>
           </div>
         </header>
         <div
-          class="image-preview-body p-3"
+          class="image-preview-body p-4"
           tabindex="0"
           aria-label="Billedområde"
         >
