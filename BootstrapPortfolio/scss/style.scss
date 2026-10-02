@@ -144,6 +144,7 @@ body {
   .card-body {
     max-height: 60vh;
     overflow-y: auto;
+    overflow-x: hidden;
   }
 }
 
@@ -303,6 +304,16 @@ $glassblur: 12px;
   --bs-btn-border-color: #182a35;
   --bs-btn-hover-bg: #27655e;
   --bs-btn-hover-border-color: #27655e;
+}
+
+.about-contact {
+  background: #fff0bc;
+  transform: rotate(-2deg);
+  box-shadow: 2px 3px 0 rgba(24, 42, 53, 0.07);
+}
+
+.about-contact-title {
+  font-family: Georgia, serif;
 }
 
 .desk-window[data-content="projects"],

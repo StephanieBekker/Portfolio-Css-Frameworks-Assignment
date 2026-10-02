@@ -17,13 +17,13 @@
       id="splash"
       class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
     >
-      <img src="./assets/SB.svg" alt="" height="96" />
+      <img src="./assets/SB.svg" alt="" width="83" height="96" />
       <p class="is-size-4 mt-4">Starter en ny tanke...</p>
       <div class="boot-line mt-4 mb-5" aria-hidden="true"></div>
       <button
         type="button"
         id="splash-skip"
-        class="button is-small glass is-rounded px-5"
+        class="button glass is-rounded is-size-small has-text-weight-normal px-5 py-1"
       >
         Gå direkte til skrivebordet
       </button>
@@ -54,7 +54,7 @@
         <button
           type="button"
           data-window="about"
-          class="folder small is-flex is-flex-direction-column is-align-items-center is-gap-1 pt-4 px-2 pb-1"
+          class="folder is-size-small is-flex is-flex-direction-column is-align-items-center is-gap-1 pt-4 px-2 pb-1"
         >
           <span
             class="folder-shape is-flex is-justify-content-center is-align-items-center is-size-4"
@@ -67,7 +67,7 @@
         <button
           type="button"
           data-window="readme"
-          class="folder small is-flex is-flex-direction-column is-align-items-center is-gap-1 pt-4 px-2 pb-1"
+          class="folder is-size-small is-flex is-flex-direction-column is-align-items-center is-gap-1 pt-4 px-2 pb-1"
         >
           <span
             class="folder-shape is-flex is-justify-content-center is-align-items-center is-size-4"
@@ -80,7 +80,7 @@
         <button
           type="button"
           data-window="projects"
-          class="folder small is-flex is-flex-direction-column is-align-items-center is-gap-1 pt-4 px-2 pb-1"
+          class="folder is-size-small is-flex is-flex-direction-column is-align-items-center is-gap-1 pt-4 px-2 pb-1"
         >
           <span
             class="folder-shape is-flex is-justify-content-center is-align-items-center is-size-4"
@@ -125,7 +125,7 @@
               </div>
             </div>
             <div class="column is-8-tablet">
-              <p class="small">
+              <p class="is-size-small">
                 Multimediedesigner &amp; webudviklingsstuderende
               </p>
               <h3 class="has-text-weight-bold mb-0">
@@ -148,7 +148,7 @@
             </p>
           </div>
           <div class="about-interests mt-5">
-            <p class="small has-text-weight-semibold mb-2">
+            <p class="is-size-small has-text-weight-semibold mb-2">
               Det interesserer mig
             </p>
             <ul class="tags mb-5" aria-label="Faglige interesser">
@@ -159,9 +159,11 @@
             </ul>
           </div>
           <footer
-            class="about-contact is-flex is-flex-wrap-wrap is-align-items-center is-justify-content-space-between is-gap-2 has-border-top pt-4 mt-5"
+            class="about-contact is-inline-flex is-flex-direction-column is-align-items-flex-start is-gap-1 p-5 mt-5"
           >
-            <span class="small">Vil du vide mere?</span>
+            <span class="about-contact-title is-italic is-size-5"
+              >Vil du vide mere?</span
+            >
             <a
               href="mailto:stephanieduvaldbekker@gmail.com"
               class="button is-rounded has-text-weight-normal px-4 py-2"
@@ -218,8 +220,8 @@
         </article>
       </template>
       <template id="projects">
-        <article class="projects-overview p-2">
-          <header class="projects-intro mb-5">
+        <article class="p-2">
+          <header class="mb-5">
             <h3 class="readme-note is-inline-block px-4 py-4 mb-0">
               Mine projekter
             </h3>
@@ -246,7 +248,7 @@
                   EKSAMENSPROJEKT · 1. SEMESTER
                 </p>
                 <h4 class="mb-2">LÅKAL</h4>
-                <p class="small mb-4">Webudvikling · Gruppeprojekt</p>
+                <p class="is-size-small mb-4">Webudvikling · Gruppeprojekt</p>
                 <p class="project-description">
                   En låneapp for naboer i samme boligfællesskab. Del de ting, I
                   allerede har, frem for at købe nyt.
@@ -284,7 +286,7 @@
               type="button"
               data-window="projects"
               data-title="✎ Projekter"
-              class="project-back button is-text has-text-weight-normal p-0 small"
+              class="project-back button is-text has-text-weight-normal p-0 is-size-small"
             >
               <span aria-hidden="true">↩</span> Tilbage til projekter
             </button>
@@ -328,7 +330,7 @@
               >
                 Om projektet
               </h4>
-              <p class="small mb-0">
+              <p class="is-size-small mb-0">
                 LÅKAL er et gruppeprojekt udviklet som eksamensprojekt på første
                 semester af webudvikling.
               </p>
@@ -344,7 +346,7 @@
                 >
                   Opgaven
                 </h4>
-                <p class="small mb-0">
+                <p class="is-size-small mb-0">
                   Undersøg og find et udækket behov med fokus på bæredygtighed.
                   Udvikl en løsning som en Single Page Application (SPA) i Vue
                   3.
@@ -352,7 +354,7 @@
               </div>
             </section>
           </div>
-          <div class="columns is-multiline my-4">
+          <div class="columns is-multiline is-2 my-4">
             <div class="column is-6-tablet">
               <section
                 class="project-answer has-border is-rounded-3 p-4 is-full-height"
@@ -360,7 +362,7 @@
               >
                 <p class="project-eyebrow mb-2">01 / PROBLEMET</p>
                 <h4 id="lakal-problem-title">Lån frem for at købe</h4>
-                <p class="small mb-0">
+                <p class="is-size-small mb-0">
                   Hvordan gør vi det enkelt og trygt for naboer at låne
                   genstande af hinanden frem for at købe nyt?
                 </p>
@@ -373,7 +375,7 @@
               >
                 <p class="project-eyebrow mb-2">02 / VORES LØSNING</p>
                 <h4 id="lakal-solution-title">Et fælles sted at dele</h4>
-                <p class="small mb-0">
+                <p class="is-size-small mb-0">
                   En app for naboer i samme boligfællesskab, fx et kollegium
                   eller en boligblok. Her kan man oprette ting til udlån og
                   anmode om at låne andres.
@@ -411,7 +413,7 @@
                   <figcaption class="column is-8-mobile is-12-tablet">
                     <p class="project-eyebrow mb-2">01 / BRUGEROPLEVELSE</p>
                     <h5>Forstå behovet</h5>
-                    <p class="small mb-0">
+                    <p class="is-size-small mb-0">
                       Research og personaer satte retningen for en enkel og
                       lokal låneoplevelse.
                     </p>
@@ -437,7 +439,7 @@
                   <figcaption class="column is-8-mobile is-12-tablet">
                     <p class="project-eyebrow mb-2">02 / DATABASE</p>
                     <h5>Skab sammenhæng</h5>
-                    <p class="small mb-0">
+                    <p class="is-size-small mb-0">
                       En relationel MySQL-database binder brugere, genstande og
                       lån sammen.
                     </p>
@@ -478,7 +480,7 @@
                   <figcaption class="column is-8-mobile is-12-tablet">
                     <p class="project-eyebrow mb-2">03 / DEN UDVIKLEDE APP</p>
                     <h5>Gør det brugbart</h5>
-                    <p class="small mb-0">
+                    <p class="is-size-small mb-0">
                       Frontend og backend understøtter oprettelse af genstande
                       og låneanmodninger.
                     </p>
@@ -486,7 +488,7 @@
                 </figure>
               </div>
             </div>
-            <p class="small mt-4 mb-0">
+            <p class="is-size-small mt-4 mb-0">
               Klik på billederne for at se dem større.
             </p>
           </section>
@@ -495,7 +497,7 @@
             aria-labelledby="lakal-learning-title"
           >
             <h4 id="lakal-learning-title">Det tager jeg med</h4>
-            <p class="small">
+            <p class="is-size-small">
               Vi havde større ambitioner end tiden tillod. Derfor prioriterede
               vi kernefunktionerne.
             </p>
@@ -514,8 +516,8 @@
               </li>
             </ul>
           </section>
-          <footer class="project-footer has-border-top pt-4 mt-5">
-            <p class="small has-text-weight-semibold mb-2">
+          <footer class="has-border-top pt-4 mt-5">
+            <p class="is-size-small has-text-weight-semibold mb-2">
               Teknologier og metoder
             </p>
             <ul
@@ -568,7 +570,7 @@
 
               <output
                 id="image-zoom-level"
-                class="small has-text-centered"
+                class="is-size-small has-text-centered"
                 aria-live="polite"
               >
                 100%
