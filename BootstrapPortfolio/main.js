@@ -89,6 +89,9 @@ let imageWidth = 0;
 function changeImageZoom(change) {
     if (zoomPercent === 100) {
         imageWidth = previewImage.clientWidth;
+
+        const imageBody = imagePreview.querySelector(".image-preview-body");
+        imageBody.style.height = `${imageBody.getBoundingClientRect().height}px`;
     }
 
     zoomPercent = Math.min(600, Math.max(100, zoomPercent + change));
@@ -111,6 +114,7 @@ zoomOut.addEventListener("click", () => changeImageZoom(-50));
 imagePreview.addEventListener("close", () => {
     zoomPercent = 100;
     previewImage.style.width = "";
+    imagePreview.querySelector(".image-preview-body").style.height = "";
     imagePreview.classList.remove("is-zoomed");
     zoomLevel.textContent = "100%";
     zoomIn.disabled = false;
